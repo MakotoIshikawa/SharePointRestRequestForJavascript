@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="/_script/RestRequest.js"></script>
+  <script src="/_script/getListInfo.js"></script>
+  <title>リスト情報取得</title>
+</head>
+<body>
+  <div id="Panel_Table"></div>
+  <hr />
+  <input type="text" id="txt_list_name" />
+  <dl>
+		<dt>itemid :</dt>
+		<dd>
+			<input type="text" id="txt_id" /></dd>
+		<dt>title : </dt>
+		<dd>
+			<input type="text" id="txt_title" /></dd>
+  </dl>
+  <hr />
+  <input type="button" id="btn_query" value="取得" />
+  <button type="button" id="btn_add">追加</button>
+  <button type="button" id="btn_update">更新</button>
+  <button type="button" id="btn_delete">削除</button>
+</body>
+</html>
