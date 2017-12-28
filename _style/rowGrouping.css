@@ -1,0 +1,19 @@
+﻿#ZipViewTable {
+	display: none;
+}
+
+.expanded-group {
+	background: url("../SiteAssets/minusMark.jpg") no-repeat scroll left center transparent;
+	padding-left: 15px !important;
+	font-weight: bold;
+	padding: 5px;
+	margin: 5px;
+}
+
+.collapsed-group {
+	background: url("../SiteAssets/plusMark.jpg") no-repeat scroll left center transparent;
+	padding-left: 15px !important;
+	font-weight: bold;
+	padding: 5px;
+	margin: 5px;
+}

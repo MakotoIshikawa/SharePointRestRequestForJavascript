@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>週報入力フォーム</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../../_script/jQueryPlugin/ConvertDateToString.js"></script>
+  <script>
+    (function ($) {
+      $.extend({
+        GetBeginOfWeek: function (year, week, day) {
+          var onejan = new Date(year, 0, 1);
+          var offset = onejan.getDay();
+          var numDate = onejan.getDate() + (week * 7) - offset;
+          if (day) {
+            numDate += day;
+          }
+          return onejan.setDate(numDate);
+        }
+      });
+      $.fn.extend({
+        GetWeekDays: function () {
+          var val = $(this).val();
+          if (!val) {
+            throw new Error('値が設定されていません');
+          }
+
+          var ls = val.split('-W');
+          var year = Number(ls[0]);
+          var weekNumber = Number(ls[1]);
+
+          var ary = [];
+          for (var i = 0 ; i < 7 ; i++) {
+            ary.push($.GetBeginOfWeek(year, weekNumber, i + 1));
+          }
+
+          return ary;
+        }
+      });
+      $(window).load(function () {
+        $('input#Period').change(function () {
+          try {
+            var days = $('#Period').GetWeekDays();
+            var wNames = ['月', '火', '水', '木', '金', '土', '日', ];
+
+            $('.day').each(function (i) {
+              var day = new Date(days[i]);
+              var str = $.ConvertDateToString.Format(day, 'yyyy/MM/dd (W)');
+              $(this).text(str);
+            });
+
+            $('.period-str').text($('.day').first().text() + '～' + $('.day').last().text());
+          } catch (e) {
+            alert(e.message);
+          }
+        });
+        $('#Btn_OK').click(function () {
+          alert('週報内容をコピーしました。');
+        });
+
+        var $officialTime = $('#Official').find('input[type="time"]');
+        $officialTime.change(function () {
+          var start = $officialTime.first().val();
+          var end = $officialTime.last().val();
+          $('.time-start').val(start);
+          $('.time-end').val(end);
+        }).change();
+      });
+    })(jQuery);
+  </script>
+  <style>
+    #MakeReport label {
+      padding: 4px 8px;
+    }
+
+    #MakeReport textarea {
+      min-height: 80px;
+      min-width: 360px;
+    }
+
+    #MakeReport dd {
+      padding: 4px 0px;
+    }
+  </style>
+</head>
+<body>
+  <div id="MakeReport">
+    <dl title="業務期間">
+      <dt>業務期間</dt>
+      <dd>
+        <input id="Period" type="week" />
+        <label class="period-str"></label>
+      </dd>
+    </dl>
+    <dl title="業務場所">
+      <dt>業務場所</dt>
+      <dd>
+        <input type="text" placeholder="業務場所を入力して下さい" /></dd>
+    </dl>
+    <dl title="業務内容">
+      <dt>業務内容</dt>
+      <dd>
+        <textarea placeholder="業務内容を入力して下さい"></textarea></dd>
+    </dl>
+    <dl title="勤務時間">
+      <dt>勤務時間</dt>
+      <dd id="Official">
+        <label>勤務時間帯</label>
+        <span>
+          <input type="time" value="09:00" /><label>～</label><input type="time" value="18:00" /></span><label class="subtotal"></label></dd>
+      <dd>
+        <label>休憩時間：</label><input type="number" value="1" /><label>h</label></dd>
+      <dd id="Monday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start" /><label>～</label><input type="time" class="time-end" /></span><label class="subtotal"></label></dd>
+      <dd id="Tuesday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start" /><label>～</label><input type="time" class="time-end" /></span><label class="subtotal"></label></dd>
+      <dd id="Wednesday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start" /><label>～</label><input type="time" class="time-end" /></span><label class="subtotal"></label></dd>
+      <dd id="Thursday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start" /><label>～</label><input type="time" class="time-end" /></span><label class="subtotal"></label></dd>
+      <dd id="Friday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start" /><label>～</label><input type="time" class="time-end" /></span><label class="subtotal"></label></dd>
+      <dd id="Saturday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start-holiday" /><label>～</label><input type="time" class="time-end-holiday" /></span><label class="subtotal"></label></dd>
+      <dd id="Sunday">
+        <label class="day"></label>
+        <span>
+          <input type="time" class="time-start-holiday" /><label>～</label><input type="time" class="time-end-holiday" /></span><label class="subtotal"></label></dd>
+    </dl>
+    <dl title="次週の予定">
+      <dt>次週の予定</dt>
+      <dd>
+        <textarea placeholder="内容を入力して下さい"></textarea></dd>
+    </dl>
+    <dl title="反省点・気付き・その他">
+      <dt>反省点・気付き・その他</dt>
+      <dd>
+        <textarea placeholder="内容を入力して下さい"></textarea></dd>
+    </dl>
+    <button type="button" id="Btn_OK">週報作成</button>
+  </div>
+</body>
+</html>

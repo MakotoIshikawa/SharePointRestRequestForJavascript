@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="jp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>切替</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style>
+    .admin .person-parts {
+      display: none;
+    }
+
+    .admin .admin-parts {
+      display: block;
+    }
+
+    .person-parts {
+      display: block;
+    }
+
+    .admin-parts {
+      display: none;
+    }
+  </style>
+  <script>
+    (function ($) {
+      $(window).load(function () {
+        $('#ToggleBtn').click(function () {
+          $('#FormParts').toggleClass('admin');
+        });
+      });
+    })(jQuery);
+  </script>
+</head>
+<body>
+  <div id="FormParts" class="admin">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <span>投稿日</span>
+          </td>
+          <td>
+            <div class="person-parts">
+              <label>2015/01/06</label>
+            </div>
+            <div class="admin-parts">
+              <input type="text" value="2015/01/06" />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>本文</span>
+          </td>
+          <td>
+            <div class="admin-parts">
+              <label>本文の内容です。</label>
+            </div>
+            <div class="person-parts">
+              <textarea>本文の内容です。</textarea>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <input id="ToggleBtn" type="button" value="切替" />
+</body>
+</html>

@@ -1,0 +1,65 @@
+/* _lcid="1041" _version="16.0.4803" _LocalBinding */
+/* Oslo 代替CSS - 現在のデザインを微調整するには、このファイルを変更します
+以下は、始めるためにいくつかのサンプルです */
+
+/* ヘッダーの背景 */
+#titlerow {
+  background-color:rgba(229, 113, 137, 0.81);
+}
+
+/* サイト名 */
+.ms-core-pageTitle a {
+  color: white;
+  font-size: 40px;
+  font-family: Tahoma;
+}
+
+/* サイトロゴ */
+.ms-siteicon-img {
+  height: 40px;
+}
+
+/* コンテンツ領域 */
+.ms-pub-contentLayout {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* フッター */
+#footer {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* フルページレイアウト */
+.fullPageLayout {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* フルページレイアウト - ページ名を使用して個々のページをターゲット (すべてのレイアウトのための可能な) */
+.fullPageLayout-Home {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* 2列のレイアウト */
+.twoColumnLayout-left, 
+.twoColumnLayout-right {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* 左サイドバーのレイアウト */
+.twoColumnLeftLayout-right, 
+.twoColumnLeftLayout-left {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* 右サイドバーのレイアウト */
+.twoColumnRightLayout-left, 
+.twoColumnRightLayout-right {
+  background-color: rgba(255, 255, 255, 1.0);
+}
+
+/* 二列ヘッダーのレイアウト */
+.twoRowTwoColumn-top, 
+.twoRowTwoColumn-bottomLeft, 
+.twoRowTwoColumn-bottomRight {
+  background-color: rgba(255, 255, 255, 1.0);
+}

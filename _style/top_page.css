@@ -1,0 +1,132 @@
+﻿/* コンテンツ */
+#contentBox {
+  margin: 0px 16px;
+}
+#contentRow {
+  max-width: 1280px;
+  max-height: 610px;
+}
+.ms-webpartzone-cell {
+  margin: auto;
+}
+
+/* コンテンツボックス上部 */
+#InvisibleIfEmpty_Header {
+  display: none;
+}
+
+/* Web パーツタイトル */
+.ms-webpartPage-root tr:first-child .ms-webpart-chrome-title {
+  margin: 0px;
+}
+.ms-webpartPage-root tr:first-child .ms-webpart-chrome-title h2 {
+  padding: 4px 20px;
+}
+
+/* Web パーツビューヘッダー */
+.ms-viewheadertr {
+  display: none;
+}
+
+/* Web パーツ */
+.ms-webpart-chrome td {
+  white-space: nowrap;
+}
+#InvisibleIfEmpty_LeftColumn .ms-wpContentDivSpace,
+#InvisibleIfEmpty_RightColumn .ms-wpContentDivSpace {
+  overflow: auto;
+  height: 168px;
+}
+
+/* 最新ニュース */
+#InvisibleIfEmpty_LeftColumn h2:before {
+  background-color: rgb(0, 45, 94);
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+}
+#InvisibleIfEmpty_LeftColumn .ms-webpart-chrome,
+#InvisibleIfEmpty_LeftColumn .ms-webpart-chrome > div {
+  width: 540px;
+}
+
+/* コミュニケーション */
+#InvisibleIfEmpty_RightColumn .ms-webpart-chrome,
+#InvisibleIfEmpty_RightColumn .ms-webpart-chrome > div {
+  width: 660px;
+}
+
+#InvisibleIfEmpty_RightColumn .ms-webpart-chrome-title {
+  background-color: rgb(0, 120, 214);
+  border-left: 1px solid rgb(0, 120, 214);
+  border-right: 1px solid rgb(0, 120, 214);
+}
+#InvisibleIfEmpty_RightColumn .ms-webpart-chrome-title h2,
+#InvisibleIfEmpty_RightColumn .ms-webpart-chrome-title h2 > a {
+  color: #fff;
+}
+#InvisibleIfEmpty_RightColumn .ms-listviewtable tbody {
+  display: table;
+}
+#InvisibleIfEmpty_RightColumn .ms-listviewtable tr {
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+  padding: 2px 4px 0px;
+  min-width: 136px;
+}
+#InvisibleIfEmpty_RightColumn .ms-listviewtable tr.ms-viewheadertr {
+  display: none;
+}
+#InvisibleIfEmpty_RightColumn .ms-listviewtable tr > td {
+  display: block;
+  padding: 0px;
+}
+#InvisibleIfEmpty_RightColumn img {
+  max-height: 97px;
+  max-width: 137px;
+}
+
+/* New アイコン */
+.newdocument-icon:after {
+  content: "NEW";
+  color: #fff;
+  font-size: 12px;
+  background-color: rgb(0, 105, 177);
+  padding: 0px 8px;
+}
+
+/* コミュニケーションアイコン */
+.kind-icon {
+  border: 1px solid #ddd;
+  width: 101px;
+  height: 101px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+}
+.kind-icon > span {
+  display: none;
+}
+
+[title='CASE00'].kind-icon { background-image: url("../ImageLib/communication/icon_01.bmp"); }
+[title='CASE01'].kind-icon { background-image: url("../ImageLib/communication/icon_02.bmp"); }
+[title='CASE02'].kind-icon { background-image: url("../ImageLib/communication/icon_03.bmp"); }
+[title='CASE03'].kind-icon { background-image: url("../ImageLib/communication/icon_04.bmp"); }
+[title='CASE04'].kind-icon { background-image: url("../ImageLib/communication/icon_05.bmp"); }
+[title='CASE05'].kind-icon { background-image: url("../ImageLib/communication/icon_06.bmp"); }
+[title='CASE06'].kind-icon { background-image: url("../ImageLib/communication/icon_07.bmp"); }
+[title='CASE07'].kind-icon { background-image: url("../ImageLib/communication/icon_08.bmp"); }
+[title='CASE08'].kind-icon { background-image: url("../ImageLib/communication/icon_09.bmp"); }
+[title='CASE09'].kind-icon { background-image: url("../ImageLib/communication/icon_10.bmp"); }
+
+[title='ドキュメント'].kind-icon { background-image: url("../ImageLib/communication/icon_01.bmp"); }
+[title='お知らせ'].kind-icon { background-image: url("../ImageLib/communication/icon_02.bmp"); }
+[title='ディスカッション'].kind-icon { background-image: url("../ImageLib/communication/icon_03.bmp"); }
+[title='リンク'].kind-icon { background-image: url("../ImageLib/communication/icon_07.bmp"); }
+[title='予定'].kind-icon { background-image: url("../ImageLib/communication/icon_09.bmp"); }
+[title='タスク'].kind-icon { background-image: url("../ImageLib/communication/icon_11.bmp"); }

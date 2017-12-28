@@ -1,0 +1,249 @@
+/* 全体 */
+body,
+.ms-core-defaultFont,
+#pageStatusBar,
+.ms-status-msg,
+.js-callout-body,
+.ms-core-navigation,
+.ms-core-pageTitle,
+.ms-core-pageTitle a,
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item,
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenuEdit,
+.ms-core-listMenu-heading,
+.ms-tv-header {
+  font-family: Yu Gothic,Meiryo UI,Meiryo,MS Pgothic,Osaka,Segoe UI,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenu-item,
+.ms-core-listMenu-verticalBox > .ms-core-listMenu-root > li > .ms-core-listMenuEdit,
+.ms-core-listMenu-heading,
+.ms-tv-header {
+  font-size: 14px;
+}
+.ms-core-pageTitle, .ms-core-pageTitle a {
+  font-weight: 100;
+}
+
+/* ヘッダー */
+.o365cs-base .o365cs-topnavBGColor,
+.o365cs-base .o365cs-topnavBGColor-2,
+.o365cs-topnavBGColor.o365cs-base,
+.o365cs-topnavBGColor-2.o365cs-base {
+  background-color: #000 !important;
+}
+
+#siteIcon,
+.ms-siteicon-a,
+.ms-siteicon-img {
+  width: 64px;
+  height: 64px;
+}
+
+#siteIcon {
+  line-height: 64px;
+  background-color: #0078D7;
+  text-align: center;
+  transition: all .5s ease;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+[src*='siteIcon'].ms-siteicon-img {
+  display: none;
+}
+
+.ms-siteicon-a::after {
+  content: "S";
+  color: white;
+}
+
+#titleAreaBox {
+  margin: 10px 32px;
+}
+
+#s4-titlerow {
+  height: 87px;
+  position: fixed;
+  top: 50px;
+  margin-left: 206px;
+}
+
+#s4-workspace {
+  top: 156px;
+}
+
+#s4-ribbonrow {
+  position: fixed;
+  top: 165px;
+  z-index: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  margin-left: 206px;
+}
+
+#globalNavBox, .ms-clientcontrol-chromeheader,
+.ms-cui-topBar2,
+div.ms-cui-TabRowRight {
+  height: 40px;
+}
+div.ms-cui-TabRowRight {
+  line-height: 40px;
+  position: fixed;
+  top: 67px;
+  right: 44px;
+}
+
+#fullscreenmodebox {
+  display: none;
+}
+
+.ms-cui-tabContainer {
+  position: relative;
+  top: -150px;
+}
+
+.ms-cui-ct-ul {
+  height: 40px;
+}
+.ms-cui-ct-ul .ms-cui-tt,
+.ms-cui-tts,
+.ms-cui-tts-scale-1,
+.ms-cui-tts-scale-2 {
+  height: 100%;
+}
+@media screen and (max-width:1024px) {
+  .ms-cui-tts,
+  .ms-cui-tts-scale-1,
+  .ms-cui-tts-scale-2 {
+    position: absolute;
+    right: 12px;
+  }
+  .ms-cui-tts-scale-2 .ms-cui-tt-a {
+    width: auto;
+    padding: 0px 8px;
+  }
+}
+
+.ms-cui-tt-span,
+.ms-cui-ct-ul .ms-cui-tt-a:hover .ms-cui-tt-span {
+  padding-bottom: 12px;
+}
+
+.ms-cui-tabBody {
+  height: auto;
+  border-style: none;
+  border-width: 0px;
+  margin: 4px 0px;
+}
+
+.ms-core-listMenu-verticalBox,
+.ms-core-listMenu-horizontalBox {
+  font-size: 1.1em;
+}
+#DeltaTopNavigation {
+  position: absolute;
+  top: 1px;
+  left: 32px;
+}
+
+.ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:link,
+.ms-core-listMenu-horizontalBox .ms-core-listMenu-selected:visited,
+.ms-core-listMenu-horizontalBox .ms-core-listMenu-selected,
+.ms-tv-selected:link {
+  color: #666666;
+  font-weight: normal;
+}
+.ms-core-listMenu-selected:link, .ms-core-listMenu-selected:visited, .ms-core-listMenu-selected {
+    border-left: 2px solid #0078D7;
+}
+
+/* 検索ボックス */
+#searchInputBox {
+  margin: 0px;
+  position: fixed;
+  left: 0px;
+  top: 50px;
+}
+.ms-srch-sb > input {
+  height: 34px;
+  width: 148px;
+  background-color: white;
+  margin: 0;
+  padding: 0px 2px;
+}
+.ms-srch-sb > input,
+.ms-srch-sb > input:hover,
+.ms-srch-sb > input:focus,
+[class^="ms-srch-sb"],
+[class^="ms-srch-sb"]:hover,
+[class^="ms-srch-sb"]:focus {
+  border: none;
+}
+
+.ms-srch-sb > .ms-srch-sb-searchLink {
+  height: 34px;
+  width: 34px;
+  background-color: #0078D7;
+}
+.ms-srch-sb-searchImg {
+  display: none;
+}
+
+.ms-srch-sb-searchLink::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 8px;
+  height: 8px;
+  color: white;
+  border-top: 2px solid #FFF;
+  border-right: 2px solid #FFF;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ms-srch-sb-searchLink::after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  height: 2px;
+  width: 13px;
+  top: 17px;
+  left: 10px;
+}
+
+@media screen and (max-width:1024px) {
+  #searchInputBox {
+    position: absolute;
+    left: 3px;
+    top: 119px;
+  }
+}
+
+/* サイドメニュー */
+#sideNavBox {
+  margin: 0px;
+  padding: 12px 0px;
+  height: 100%;
+  width: 206px;
+  position: fixed;
+  top: 84px;
+  border-top: 1px solid #eaeaea;
+  border-right: 1px solid #eaeaea;
+}
+
+.ms-core-sideNavBox-removeLeftMargin {
+  margin: 0px;
+}
+
+@media screen and (max-width:1024px) {
+  #s4-titlerow,
+  #s4-ribbonrow {
+    margin-left: 0px;
+  }
+  #sideNavBox {
+    display: none;
+  }
+  #contentBox {
+    margin: 1% 2% !important;
+  }
+}

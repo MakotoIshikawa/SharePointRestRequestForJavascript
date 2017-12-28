@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>地図描画サンプル</title>
+  <script src="../_script/jQuery/jquery-2.1.4.min.js"></script>
+  <script src="../_script/jQuery/jCanvas/jcanvas.min.js"></script>
+  <script src="../_script/getListInfo.js"></script>
+  <script>
+    (function ($) {
+      var listName = 'CanvasTable';
+      $.GetItems(listName, function (data, status, xhr) {// 通信成功時の処理
+        $.each(data.d.results, function () {
+          var r = this.Red ? this.Red : 0;
+          var g = this.Green ? this.Green : 0;
+          var b = this.Blue ? this.Blue : 0;
+          var a = this.Alpha ? this.Alpha : 0;
+
+          $("#canvas").drawRect({
+            draggable: true,
+            fillStyle: 'rgba(' + r + ', ' + g + ', ' + b + ', ' + a + ')',
+            x: this.X,
+            y: this.Y,
+            width: this.Width,
+            height: this.Height,
+            fromCenter: false
+          });
+        });
+      }, function (xhr, status, error) {// 通信失敗時の処理
+        alert(xhr.status + ": " + xhr.statusText);
+      });
+    })(jQuery);
+  </script>
+  <style>
+    canvas#canvas {
+      border: 1px solid gray;
+      background-image: url('/sites/canvas/images/SampleMap.jpg');
+    }
+  </style>
+</head>
+<body>
+  <h1>地図描画サンプル</h1>
+  <canvas width="960" height="640" id="canvas"></canvas>
+</body>
+</html>

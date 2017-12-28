@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<title>ワークフロー起動</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="/_layouts/15/MicrosoftAjax.js"></script>
+	<script src="/_layouts/15/sp.runtime.js"></script>
+	<script src="/_layouts/15/sp.js"></script>
+	<script src="/_layouts/15/sp.workflowservices.js"></script>
+	<script>
+		function startWorkflow(itemId, subscriptionId) {
+			var ctx = SP.ClientContext.get_current();
+			var web = ctx.get_web();
+			var wfs = SP.WorkflowServices.WorkflowServicesManager.newObject(ctx, web);
+			var subscription = wfs.getWorkflowSubscriptionService().getSubscription(subscriptionId);
+
+			var success = false;
+			ctx.load(subscription);
+			ctx.executeQueryAsync(function (sender, args) {
+				console.log('サブスクリプションロード成功。ワークフローを開始します。');
+				success = true;
+			}, function (sender, args) {
+				console.log('サブスクリプションを読み込めませんでした。');
+				console.log('Error: ' + args.get_message() + '\n' + args.get_stackTrace());
+			});
+
+			if (!success) {
+				return false;
+			}
+
+			var inputParameters = {};
+			wfs.getWorkflowInstanceService().startWorkflowOnListItem(subscription, itemId, inputParameters);
+			ctx.executeQueryAsync(function (sender, args) {
+				console.log('ワークフローの開始に成功しました。');
+			}, function (sender, args) {
+				var msg = String.format('{0}\n{1}', args.get_message(), args.get_stackTrace());
+				alert(msg);
+			});
+		}
+
+		jQuery(function ($) {
+			$('#btn_start').click(function () {
+				var subscriptionId = 'c5b07edc-dd84-42a7-999e-b05bb77f7b44';
+
+				JSRequest.EnsureSetup();
+				var itemId = JSRequest.QueryString['ID'];
+
+				startWorkflow(subscriptionId, itemId);
+				var href = '../../../..' + _spPageContextInfo.listUrl;
+				location.href = href;
+			});
+		});
+
+		function StartWorkflow4(subscriptionId, itemId, itemGuid) {
+			showInProgressDialog();
+			var ctx = SP.ClientContext.get_current();
+			var wfManager = SP.WorkflowServices.WorkflowServicesManager.newObject(ctx, ctx.get_web());
+			var subscription = wfManager.getWorkflowSubscriptionService().getSubscription(subscriptionId);
+			ctx.load(subscription, 'PropertyDefinitions');
+			ctx.executeQueryAsync(
+				function (sender, args) {
+					var params = new Object();
+					var formData = subscription.get_propertyDefinitions()["FormData"];
+					if (formData != null && formData != 'undefined' && formData != "") {
+						var assocParams = formData.split(";#");
+						for (var i = 0; i < assocParams.length; i++) {
+							params[assocParams[i]] = subscription.get_propertyDefinitions()[assocParams[i]];
+						}
+					}
+					if (itemId) {
+						wfManager.getWorkflowInstanceService().startWorkflowOnListItem(subscription, itemId, params);
+					} else {
+						wfManager.getWorkflowInstanceService().startWorkflow(subscription, params);
+					}
+					ctx.executeQueryAsync(
+						function (sender, args) {
+							closeInProgressDialog();
+							var elWf4Start = document.getElementById("wf4Start");
+							elWf4Start.value = 1;
+							theForm.submit();
+						},
+						function (sender, args) {
+							closeInProgressDialog();
+							alert(errorMessage);
+						}
+					);
+				},
+				function (sender, args) {
+					closeInProgressDialog();
+					alert(errorMessage);
+				}
+			);
+		}
+	</script>
+</head>
+
+<body>
+	<button type="button" id="btn_start">ワークフロー開始</button>
+</body>
+
+</html>

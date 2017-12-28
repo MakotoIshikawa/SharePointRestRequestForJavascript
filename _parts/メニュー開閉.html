@@ -1,0 +1,96 @@
+﻿<script type="text/javascript" src="../SiteAssets/jquery-1.11.1.min.js"></script>
+<script>
+$.fn.extend({
+  BodyToggle: function(speed) {
+    $(this).toggleClass('checked');
+    $(this).next().slideToggle(speed);
+  },
+});
+$(function () {
+  $('nav .ms-webpart-chrome-title').click(function () {
+    $(this).BodyToggle('fast');
+  }).click();
+  $('nav h2.portal-h2').click(function () {
+    $(this).BodyToggle('fast');
+  }).click();
+  $('span.ms-core-listMenu-item').click(function () {
+    $(this).BodyToggle('fast');
+  }).click();
+});
+</script>
+<style>
+ul.ms-core-listMenu-root li.static {
+  margin: 0;
+}
+ul.ms-core-listMenu-root > li.static > span.menu-item {
+  position: relative;
+  margin: 0;
+  padding: 0.5em 1.5em;
+  border: 2px solid #0479E7;
+  font-size: 110%;
+  font-weight: bold;
+  background-color: #DDEEFF;
+  height: 1.5em;
+  display: block;
+}
+ul.ms-core-listMenu-root > li.static > span.menu-item + ul {
+  margin: 1em 0;
+}
+
+ul.ms-core-listMenu-root > li.static > span.menu-item:before {
+  content: "";
+  position: absolute;
+  background: #222288;
+  top: 50%;
+  left: 4px;
+  margin-top: -16px;
+  height: 32px;
+  width: 8px;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+}
+
+ul.ms-core-listMenu-root > li.static > span.menu-item:after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-top: solid 2px #7f7f7f;
+  border-right: solid 2px #7f7f7f;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transition: .2s;
+}
+
+ul.ms-core-listMenu-root > li.static > span.checked:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+nav h2.portal-h2:after,
+nav .ms-webpart-chrome h2:after {
+	display: block;
+	content:"";
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	width: 7px;
+	height: 7px;
+	margin-top: -4px;
+	border-top: solid 2px #7f7f7f;
+	border-right: solid 2px #7f7f7f;
+	transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	transition: .2s;
+}
+nav h2.checked:after,
+nav .ms-webpart-chrome .checked h2:after {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+</style>

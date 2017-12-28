@@ -1,0 +1,60 @@
+/* タイトル行 */
+#s4-titlerow {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* サイトロゴ */
+#siteIcon {
+  min-width: 1%;
+  line-height: 100%;
+  height: auto;
+  padding-right: 30px;
+  margin-right: 0px;
+  float: none;
+  text-align: center;
+  vertical-align: middle;
+}
+.ms-siteicon-a {
+  width: auto;
+  height: auto;
+}
+.ms-siteicon-img {
+  max-width: 100px;
+  max-height: 24px;
+}
+
+/* サイトタイトル */
+.ms-breadcrumb-box {
+  min-width: 500px;
+  width: auto;
+  height: 40px;
+  padding-right: 50px;
+  vertical-align: middle;
+}
+.ms-core-pageTitle {
+  font-size: 2em;
+  white-space: nowrap;
+  padding-right: 50px;
+  vertical-align: middle;
+}
+#pageTitle {
+  float: left;
+}
+
+/* ナビ */
+.ms-breadcrumb-top {
+  float: right;
+  padding-top: 6px;
+}
+.ms-navedit-editSpan {
+  font-size: 0.8em;
+}
+
+/* 検索ボックス */
+.ms-verticalAlignTop {
+  padding-right: 20px;
+  vertical-align: middle;
+}

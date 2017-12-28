@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>社内情報(HTML)</title>
+  <style>
+    .menu-box {
+      display: table;
+    }
+    /*オンマウス親メニュー*/
+    .myj-menu {
+      position: relative;
+      display: table-cell;
+    }
+
+    /*オンマウス親メニューリスト*/
+    .myj-menu ul {
+      top: 20%;
+      left: 70%;
+      padding: 10px;
+      margin: 0px;
+      position: absolute;
+      background: white;
+      border-radius: 10px;
+      z-index: 1;
+      border: 4px solid #6fd64f;
+    }
+    /*オンマウス親メニューリスト（ページ下部用）*/
+    .myj-menu ul.bottom-menu {
+      bottom: 0%;
+      top: auto;
+    }
+
+    /*オンマウスメニュー吹き出し箇所*/
+    .myj-menu ul:after, .myj-menu ul:before {
+      right: 100%;
+      top: 30px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    /*オンマウスメニュー吹き出し箇所（ページ下部用）*/
+    .myj-menu ul.bottom-menu:after, .myj-menu ul.bottom-menu:before {
+      top: auto;
+      bottom: 30px;
+    }
+
+    /*オンマウスメニュー吹き出し箇所*/
+    .myj-menu ul:after {
+      border-color: rgba(200, 252, 197, 0);
+      border-right-color: white;
+      border-width: 12px;
+      margin-top: -12px;
+    }
+    /*オンマウスメニュー吹き出し箇所*/
+    .myj-menu ul:before {
+      border-color: rgba(245, 42, 225, 0);
+      border-right-color: #6fd64f;
+      border-width: 16px;
+      margin-top: -16px;
+    }
+    /*オンマウスメニュー吹き出し箇所（ページ下部用）*/
+    .myj-menu ul.bottom-menu:after {
+      margin-bottom: -12px;
+    }
+    /*オンマウスメニュー吹き出し箇所（ページ下部用）*/
+    .myj-menu ul.bottom-menu:before {
+      margin-bottom: -16px;
+    }
+
+    /*オンマウス子メニューリスト*/
+    .myj-menu li ul {
+      top: -70%;
+      left: 90%;
+      margin: 0px;
+      position: absolute;
+    }
+    /*オンマウス子メニューリスト（ページ下部用）*/
+    .myj-menu li ul.bottom-menu {
+      bottom: -80%;
+      top: auto;
+    }
+
+    /*オンマウスメニューリスト項目*/
+    .myj-menu li {
+      position: relative;
+      padding: 5px;
+      list-style: none;
+      width: 200px;
+      color: black;
+      font-weight: normal;
+      font-size: 12px;
+      border-bottom: 2px dotted gray;
+    }
+    /*オンマウスメニューリスト項目選択時*/
+    .myj-menu li:hover {
+      font-weight: bold;
+      background: #c2e1f5;
+    }
+    /*左イメージ画像スタイル*/
+    .left-img {
+      width: 191px;
+      height: 101px;
+    }
+    /*中央イメージ画像スタイル*/
+    .information-img {
+      width: 137px;
+      height: 102px;
+      margin: 0px;
+    }
+    /*右イメージ画像スタイル*/
+    .useful-img {
+      width: 190px;
+      height: 64px;
+      margin-bottom: 8px;
+    }
+
+    .myj-menu > ul,
+    .myj-menu > ul > li ul {
+      display: none;
+    }
+
+    .myj-menu:hover > ul,
+    .myj-menu > ul > li:hover ul {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img alt="information.png" src="../ImageLib/news/information.png" style="margin: 0px; width: 684px; height: 83px;" />
+  <div class="menu-box">
+    <div class="myj-menu">
+      <img class="information-img" alt="経営計画" src="../ImageLib/news/information01_off.png" />
+      <ul>
+        <li><span>０１．全社年度計画</span></li>
+        <li><span>０２．各部実行計画</span></li>
+        <li><span>０３．全社予算計画</span>
+          <ul>
+            <li><span>０１．予算案策定ガイド</span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <a title="総務人事部ニュース" href="/sites/MYJ/Lists/List">
+        <img class="information-img" alt="information02.png" src="../ImageLib/news/information02_off.png" /></a>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="情報システム関連" src="../ImageLib/news/information03_off.png" />
+      <ul>
+        <li><span>０１．端末管理</span></li>
+        <li><span>０２．台帳管理</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="申請／報告／手続関連" src="../ImageLib/news/information04_off.png" />
+      <ul>
+        <li><span>０１．一般申請</span>
+          <ul>
+            <li><span>０１．定型帳票</span></li>
+            <li><span>０２．電子申請</span></li>
+          </ul>
+        </li>
+        <li><span>０２．メールファイルサーバ設定</span>
+          <ul>
+            <li><span>０１．社外メール事前承認</span></li>
+            <li><span>０２．ファイルサーバアクセス権設定</span></li>
+          </ul>
+        </li>
+        <li><span>０３．法務チェック</span>
+          <ul>
+            <li><span>０１．法務チェック依頼</span></li>
+            <li><span>０２．法務チェック手順・解説書</span></li>
+          </ul>
+        </li>
+        <li><span>０４．事務リスク等報告</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="組織・体制図" src="../ImageLib/news/information05_off.png" />
+      <ul>
+        <li><span>０１．全社組織・体制図</span></li>
+        <li><span>０２．各部座席表</span></li>
+      </ul>
+    </div>
+  </div>
+  <div>
+    <div class="myj-menu">
+      <a title="社員名簿" href="/sites/MYJ/Lists/List1">
+        <img class="information-img" alt="information06.png" src="../ImageLib/news/information06_off.png" /></a>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="プライバシーマーク" src="../ImageLib/news/information07_off.png" />
+      <ul>
+        <li><span>０１．PMS帳票</span></li>
+        <li><span>０２．管理台帳</span></li>
+        <li><span>０３．報告</span></li>
+        <li><span>０４．更新申請</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="会議関連" src="../ImageLib/news/information08_off.png" />
+      <ul class="bottom-menu">
+        <li><span>０１．取締役会</span></li>
+        <li><span>０２．経営会議</span></li>
+        <li><span>０３．部長会議</span>
+          <ul class="bottom-menu">
+            <li><span>０１．部次長専用帳票</span></li>
+            <li><span>０２．部長会</span></li>
+          </ul>
+        </li>
+        <li><span>０４．業務報告会</span></li>
+        <li><span>０５．リスク管理・コンプライアンス委員会</span></li>
+        <li><span>０６．マネジメントレビュー会（情報保護推進委員会）</span></li>
+        <li><span>０７．情報管理担当者会議</span></li>
+        <li><span>０８．情報システム管理担当者会議</span></li>
+        <li><span>０９．総務担当者会議</span></li>
+        <li><span>１０．月曜連絡会</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="社史" src="../ImageLib/news/information09_off.png" />
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="MYJ業務早わかりブック" src="../ImageLib/news/information10_off.png" />
+    </div>
+  </div>
+  <div>
+    <div class="myj-menu">
+      <img class="information-img" alt="ISO9001認証" src="../ImageLib/news/information11_off.png" />
+      <ul class="bottom-menu">
+        <li><span>０１．帳票</span></li>
+        <li><span>０２．管理台帳</span></li>
+        <li><span>０３．報告</span></li>
+        <li><span>０４．申請</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="規定／内規／手順・解説書関連" src="../ImageLib/news/information14_off.png" />
+      <ul class="bottom-menu">
+        <li><span>０１．規定等一覧</span>
+          <ul class="bottom-menu">
+            <li><span>０１．法令・定約款に基づく規定等</span></li>
+            <li><span>０２．経営管理関係規定</span></li>
+            <li><span>０３．リスク管理・コンプライアンス関係規定</span></li>
+            <li><span>０４．情報管理関係規定</span></li>
+            <li><span>０５．総務・人事・経理関係規定</span></li>
+            <li><span>０６．社員等関係規定</span></li>
+            <li><span>０７．福利厚生関係規定</span></li>
+            <li><span>０８．確認担当者関係規定</span></li>
+            <li><span>０９．MYJ必須ハンドブック</span></li>
+            <li><span>１０．その他規定等</span></li>
+          </ul>
+        </li>
+        <li><span>０２．内規一覧</span>
+          <ul class="bottom-menu">
+            <li><span>０１．経営管理関係内規</span></li>
+            <li><span>０２．リスク管理・コンプライアンス関係内規</span></li>
+            <li><span>０３．情報管理関係内規</span></li>
+            <li><span>０４．総務・人事・経理関係内規</span></li>
+            <li><span>０５．社員等関係内規</span></li>
+            <li><span>０６．福利厚生関係内規</span></li>
+            <li><span>０７．各部固有内規等（全社周知用）</span></li>
+          </ul>
+        </li>
+        <li><span>０３．手順・解説書一覧</span>
+          <ul class="bottom-menu">
+            <li><span>０１．経営管理関係手順・解説書</span></li>
+            <li><span>０２．リスク管理・コンプライアンス関係手順・解説書</span></li>
+            <li><span>０３．情報管理関係手順・解説書</span></li>
+            <li><span>０４．総務・人事・経理関係手順・解説書</span></li>
+            <li><span>０５．社員等関係手順・解説書</span></li>
+            <li><span>０６．福利厚生関係手順・解説書</span></li>
+            <li><span>０７．各部固有手順・解説書等（全社周知用）</span></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="BCP政策" src="../ImageLib/news/information15_off.png" />
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="委員会等関係" src="../ImageLib/news/information12_off.png" />
+      <ul class="bottom-menu">
+        <li><span>０１．MoT運動推進委員会</span></li>
+        <li><span>０２．Advance21委員会</span></li>
+        <li><span>０３．マナー・ホスピタリティ委員会</span></li>
+        <li><span>０４．広報・コミュニケーション委員会</span></li>
+        <li><span>０５．健康増進・人権推進委員会</span></li>
+        <li><span>０６．MYJの会</span></li>
+      </ul>
+    </div>
+    <div class="myj-menu">
+      <img class="information-img" alt="部別サイト" src="../ImageLib/news/information16_off.png" />
+      <ul class="bottom-menu">
+        <li><span>０１．ほけんポート事業部</span></li>
+        <li><span>０２．確認業務部</span></li>
+        <li><span>０３．印刷業務部</span></li>
+        <li><span>０４．配送業務部</span></li>
+        <li><span>０５．書簡業務部</span></li>
+        <li><span>０６．東京データ事務サービス部</span></li>
+        <li><span>０７．大阪事務サービス部</span></li>
+        <li><span>０８．集団事務サービス部</span></li>
+        <li><span>０９．保全事務サービス部</span></li>
+        <li><span>１０．法人事務サービス部</span></li>
+        <li><span>１１．損保事務サービス部</span></li>
+        <li><span>１２．システムデータサービス部</span></li>
+        <li><span>１３．厚生サービス部</span></li>
+        <li><span>１４．ビジネスサポート部</span></li>
+        <li><span>１５．総務人事部</span></li>
+        <li><span>１６．経営企画部</span></li>
+        <li><span>１７．リスク管理・コンプライアンス部</span></li>
+        <li><span>１８．内部監査部</span></li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿span[title="保留"]::after,
+span[title^="承認待"]::after,
+span[title="未承認"]::after {
+  content: " (Pending)";
+}
+span[title="承認"]::after {
+  content: " (Approve)";
+}
+span[title^="承認済"]::after {
+  content: " (Approved)";
+}
+span[title="却下"]::after {
+  content: " (Rejected)";
+}

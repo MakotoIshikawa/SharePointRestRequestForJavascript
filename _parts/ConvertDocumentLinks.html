@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>文書リンク変換</title>
+  <style type="text/css">
+    input[type="text"] {
+      width: 400px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function convertDocumentLink() {
+      try {
+        var text = $('#Text1').val();
+        var info = $.NotesRichTextDoclink(text);
+
+        var html =
+          'サーバー名 : ' + info.ServerName + '<br />'
+          + 'DB レプリカ ID : ' + info.DbReplicaID + '<br />'
+          + 'ビューユニバーサル ID : ' + info.ViewUnID + '<br />'
+          + '文書ユニバーサル ID : ' + info.DocUnID + '<br />';
+
+        $('#LabelMsg').html(html);
+        $('#Text2').val(info.DocUnID);
+
+        return true;
+      } catch (e) {
+        alert(e);
+
+        $('#Text1').val('');
+        $('#LabelMsg').html('文書リンクのアドレスを入力して下さい。');
+
+        return false;
+      }
+    }
+    $.extend({
+      NotesRichTextDoclink: function (link) {
+        if (!link.length) {
+          throw '指定されたリンクアドレスは空です。';
+        }
+
+        var ls = link.split('/');
+
+        var info = {
+          ServerName: ls[2],
+          DbReplicaID: ls[3],
+          ViewUnID: ls[4],
+          DocUnID: ls[5],
+        };
+
+        if (!info.DocUnID) {
+          throw '指定されたリンクアドレスは不正な文字列です。';
+        }
+
+        return info
+      },
+    });
+  </script>
+</head>
+<body>
+  <p>
+    <a href="notes://nissay-domino/49257D2A0019F972/4269559D9C2ADBA6492577840025B699/63DA3A21A473D9DC49257D79000F3E8E">文書リンク</a>
+  </p>
+  <br />
+  <p>
+    <input id="Text1" type="text" />
+    <input id="Button1" type="button" value="変換" onclick="return convertDocumentLink();" />
+  </p>
+  <div id="LabelMsg">
+    文書リンクのアドレスを入力して下さい。
+  </div>
+  <br />
+  <p>
+    <input id="Text2" type="text" />
+    <input id="Button2" type="button" value="検索" />
+  </p>
+</body>
+</html>

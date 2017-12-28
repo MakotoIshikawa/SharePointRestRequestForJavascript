@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title>Power BI 印刷</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="../SiteAssets/parts/js/jQuery.print.js"></script>
+  <script type="text/javascript" src="../SiteAssets/parts/js/printPreview.js"></script>
+  <script text="javascript/text">
+    jQuery(function ($) {
+      $('#btn_print').click(function () {
+        $('#power_bi').print({
+          timeout: 60000,
+        });
+      });
+      $('#btn_preview').printPreview({
+        obj2print: '#power_bi',
+        width: '980',
+        height: screen.height,
+      });
+    });
+  </script>
+  <style>
+    .table-body {
+      display: table;
+    }
+
+    .table-row {
+      display: table-row;
+    }
+
+    .table-cell {
+      display: table-cell;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" id="btn_preview" value="プレビュー">
+  <input type="button" id="btn_print" value="印刷">
+  <div id="power_bi">
+    <label>Power&nbsp;BI&nbsp;一覧表示</label>
+    <div class="table-body">
+      <div class="table-row">
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiNTM2NWFkODEtZjViYi00YTZjLTk4M2YtYmZkNjJkMGFhMWNkIiwidCI6Ijg1NWM2NDRiLTdjMTQtNDE0OS05NTQ0LTc4M2Q5MWE4OGZjNSJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiMmYwMzRiYmItMmJjMS00OGIyLWJkOGEtOGI0OGE0ZDE5NTFhIiwidCI6Ijg1NWM2NDRiLTdjMTQtNDE0OS05NTQ0LTc4M2Q5MWE4OGZjNSJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiY2JjNTU4OTUtMTk5OS00MzIwLTlkZTAtMDA1YjBjMGJmOTIzIiwidCI6Ijg1NWM2NDRiLTdjMTQtNDE0OS05NTQ0LTc4M2Q5MWE4OGZjNSJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiMTBmMWY2NzYtZDFmMS00ZjA2LWJkNWUtODdjNGY3ODc4ZTNkIiwidCI6Ijg1NWM2NDRiLTdjMTQtNDE0OS05NTQ0LTc4M2Q5MWE4OGZjNSJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiYjAzNGE1NWMtZjEwYi00ODY1LWFjY2QtZmJkYjE1NTMzMDRkIiwidCI6ImQ5YzIzNDAwLWY2MWItNGM4OC05ZjNhLTY0ZTc5M2E4OTU5MCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiMWY5MDFhYjUtZTllMS00NmNmLTgwOTctOGZlYTczMTdlNWQxIiwidCI6ImQ5YzIzNDAwLWY2MWItNGM4OC05ZjNhLTY0ZTc5M2E4OTU5MCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+      <div class="table-row">
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiNTdiOWRkOTctZmFlOC00YWQyLTgwYjMtMDNjMmZkZjI2OTExIiwidCI6ImQ5YzIzNDAwLWY2MWItNGM4OC05ZjNhLTY0ZTc5M2E4OTU5MCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="table-cell">
+          <iframe width="480" height="360" src="https://app.powerbi.com/view?r=eyJrIjoiNjJjNmNmZTEtNWQ0ZS00MTI2LWJhMjYtOTM1ZGQ2MTE3N2UzIiwidCI6ImQ5YzIzNDAwLWY2MWItNGM4OC05ZjNhLTY0ZTc5M2E4OTU5MCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

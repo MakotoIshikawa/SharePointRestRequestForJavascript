@@ -1,0 +1,78 @@
+﻿/* タイトル領域 */
+#s4-titlerow {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 3px solid rgba(0, 120, 214, 1);
+}
+#titleAreaBox {
+  margin: auto 20px;
+}
+.ms-verticalAlignTop {
+  vertical-align: middle;
+  text-align: justify;
+}
+
+/* サイトロゴ */
+#siteIcon {
+  min-width: 1%;
+  line-height: 100%;
+  height: auto;
+  padding-right: 30px;
+  margin-right: 0px;
+  float: none;
+  text-align: justify;
+}
+.ms-siteicon-a {
+  width: auto;
+  height: auto;
+}
+.ms-siteicon-img {
+  max-width: 100px;
+  max-height: 24px;
+}
+
+/* タイトル、ナビ領域 */
+.ms-breadcrumb-box {
+  width: 100%;
+  height: 100%;
+  padding-right: 50px;
+}
+.ms-core-listMenu-horizontalBox {
+  display: table-cell;
+}
+
+/* サイトタイトル */
+#pageTitle {
+  display: none;
+}
+#titleAreaBox ul.ms-core-listMenu-root > li.static > a.ms-navedit-linkNode {
+  font-size: 2em;
+}
+#titleAreaBox ul.ms-core-listMenu-root > li.static > a.ms-navedit-linkNode:hover {
+  color: #666666;
+}
+
+/* ナビ */
+.ms-core-listMenu-horizontalBox > ul > li > ul {
+  font-size: 1.3em;
+}
+
+/* 検索ボックス */
+.ms-srch-sb {
+  width: 190px;
+}
+.ms-srch-sb > input {
+  width: 140px;
+}
+.ms-mpSearchBox {
+  float: none;
+  padding-right: 20px;
+  min-width: 150px;
+  vertical-align: middle;
+  width: auto;
+}
+#searchInputBox {
+  margin: 0px;
+}

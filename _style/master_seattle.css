@@ -1,0 +1,237 @@
+﻿/* タイトル行設定 */
+#s4-titlerow {
+  background-color:rgba(229, 113, 137, 0.81);
+  background-image: -moz-linear-gradient(top, transparent, #FFFFFF);
+  background-image: -ms-linear-gradient(top, transparent, #FFFFFF);
+  background-image: -webkit-linear-gradient(top, transparent, #FFFFFF);
+  background-image: linear-gradient(top, transparent, #FFFFFF);
+  padding: 19px 0px 31px;
+  border-bottom: 4px solid rgb(222, 133, 161);
+}
+/* サイト名 */
+.ms-core-pageTitle {
+  color: white;
+  font-size: 40px;
+  font-family: Tahoma;
+}
+/* サイトロゴ */
+.ms-siteicon-img {
+  height: 40px;
+}
+#SearchBox > div {
+  background-color: rgba(255,255,255,0.75);
+}
+
+.ms-core-overlay {
+  background-color: transparent;
+}
+#contentRow {
+  padding-top: 8px;
+}
+#contentBox {
+  background-color: rgba(255, 255, 255, 0.81);
+  padding: 8px 16px;
+}
+
+/* Web パーツ */
+.ms-webpartzone-cell {
+  margin: 0;
+  padding: 0;
+}
+.ms-webpart-chrome-title {
+  margin: 0;
+  margin-bottom: -3px;
+}
+.s4-wpcell > div.ms-webpart-chrome,
+.s4-wpActive > div.ms-webpart-chrome {
+  display: block;
+  border: 2px solid rgba(228, 228, 231, 1);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+.ms-webpart-chrome-title > span {
+  background-color: #CCCCCC;
+  border-bottom: 3px solid rgb(199, 0, 116);
+  border-top-left-radius: 6px; 
+  border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+}
+.ms-webpart-chrome-title > span > h2 {
+  position: relative;
+  margin: 0;
+  padding: 0.2em 0.4em;
+  font-size: 1.3em;
+  font-weight: normal;
+  border: 2px solid #FFFFFF;
+  border-top-left-radius: 6px; 
+  border-top-right-radius: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  background: -moz-linear-gradient(left,  rgba(255,255,255,1) 0%, rgba(241,240,239,1) 62%, rgba(240,239,237,0.7) 68%, rgba(232,231,229,0) 100%); /* FF3.6+ */
+  background: -ms-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(241,240,239,1) 62%,rgba(240,239,237,0.7) 68%,rgba(232,231,229,0) 100%); /* IE10+ */
+  background: -webkit-linear-gradient(left,  rgba(255,255,255,1) 0%,rgba(241,240,239,1) 62%,rgba(240,239,237,0.7) 68%,rgba(232,231,229,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(241,240,239,1) 62%,rgba(240,239,237,0.7) 68%,rgba(232,231,229,0) 100%); /* W3C */
+}
+.ms-webpart-chrome-title > span > h2 > img {
+  width: 20px;
+  height: 20px;
+}
+.ms-webpart-chrome-title + div {
+  padding: 0.8em;
+  border: 2px solid #FFF;
+  border-bottom-left-radius: 6px; 
+  border-bottom-right-radius: 6px; 
+  -webkit-border-bottom-left-radius: 6px; 
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  background-image: -moz-linear-gradient(top, transparent, rgba(228, 228, 231, 1));
+  background-image: -ms-linear-gradient(top, transparent, rgba(228, 228, 231, 1));
+  background-image: -webkit-linear-gradient(top, transparent, rgba(228, 228, 231, 1));
+  background-image: linear-gradient(top, transparent, rgba(228, 228, 231, 1));
+}
+table.ms-listviewtable {
+  width: 100%;
+  padding: 3px;
+}
+.ms-rte-wpbox {
+  margin-bottom: 8px;
+}
+
+/* サイドナビゲーション */
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root li.static {
+  list-style: none;
+  border-left: 5px solid #CCC;
+  margin: 0.5px;
+  padding: 0;
+  background-color: #EEE;
+  background-size: 12px 12px;
+  font-weight: normal;
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root li.static.selected {
+  list-style: none;
+  border-left: 4px solid rgb(199, 0, 116);
+  background-color: rgb(255, 240, 241);
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root li > .ms-core-listMenu-item {
+  padding: 0.8em;
+  background-color: transparent;
+  background-image: -moz-linear-gradient(top, #FFF, transparent);
+  background-image: -ms-linear-gradient(top, #FFF, transparent);
+  background-image: -webkit-linear-gradient(top, #FFF, transparent);
+  background-image: linear-gradient(top, #FFF, transparent);
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root li > a:hover {
+  background-color: rgba(252, 222, 225, 0.75);
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root > li.static > span.menu-item:after {
+  display: block;
+  content: "";
+  position: relative;
+  top: -0.55em;
+  left: 162px;
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-top: solid 1px #7f7f7f;
+  border-right: solid 1px #7f7f7f;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transition: .2s;
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root > li.static > span.menu-item.closed:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+div#DeltaPlaceHolderLeftNavBar ul.ms-core-listMenu-root li.static.selected > .menu-item::after {
+  border-top: solid 1px rgb(199, 0, 116);
+  border-right: solid 1px rgb(199, 0, 116);
+}
+
+/* グローバルナビゲーション */
+.ms-breadcrumb-top {
+  position: absolute;
+  left: 16px;
+  top: 74px;
+  background-image: -moz-linear-gradient(top, transparent, rgb(192, 53, 132));
+  background-image: -ms-linear-gradient(top, transparent, rgb(192, 53, 132));
+  background-image: -webkit-linear-gradient(top, transparent, rgb(192, 53, 132));
+  background-image: linear-gradient(top, transparent, rgb(192, 53, 132));
+}
+.ms-breadcrumb-top div > ul > li > a.ms-navedit-linkNode {
+  display: none;
+}
+li.ms-listMenu-editLink {
+  display: none;
+}
+.ms-breadcrumb-top div ul > li ul li {
+  margin-left: 0.5px;
+  margin-right: 0.5px;
+  list-style: none;
+}
+.ms-core-listMenu-horizontalBox li.static > a.ms-core-listMenu-item {
+  width: 100px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* その他リンク */
+#s4-titlerow ul a {
+  padding: 10px;
+  background-image: -moz-linear-gradient(top, rgb(192, 53, 132), rgb(50, 16, 19));
+  background-image: -ms-linear-gradient(top, rgb(192, 53, 132), rgb(50, 16, 19));
+  background-image: -webkit-linear-gradient(top, rgb(192, 53, 132), rgb(50, 16, 19));
+  background-image: linear-gradient(top, rgb(192, 53, 132), rgb(50, 16, 19));
+  border-radius: 4px 4px 0px 0px;
+  border: none;
+}
+#s4-titlerow ul li.selected > a.static {
+  background-image: none;
+  background-color: rgb(222, 133, 161);
+}
+#s4-titlerow ul li.selected > a span {
+  color: rgb(152, 51, 102);
+}
+#s4-titlerow ul a:link span {/* 未訪問 */
+  color: #FFFFFF;
+}
+#s4-titlerow ul a:visited span {/* 訪問済み */
+  color: #FFFFFF;
+}
+#s4-titlerow ul a:hover {/* ポイント時 */
+  background-image: -moz-linear-gradient(top, rgb(192, 53, 132), rgb(255, 46, 164));
+  background-image: -ms-linear-gradient(top, rgb(192, 53, 132), rgb(255, 46, 164));
+  background-image: -webkit-linear-gradient(top, rgb(192, 53, 132), rgb(255, 46, 164));
+  background-image: linear-gradient(top, rgb(192, 53, 132), rgb(255, 46, 164));
+}
+#s4-titlerow ul a:hover span {/* ポイント時 */
+  color: #CCCCCC;
+  text-decoration:  none;
+}
+#s4-titlerow ul a:active span {/* 選択中 */
+  color: #58d5ac;
+}
+
+/* ドロップリスト内リンク */
+#s4-titlerow .dynamic a:link span {/* 未訪問 */
+  color: #D55881;
+}
+#s4-titlerow .dynamic a:visited span {/* 訪問済み */
+  color: #D55881;
+}
+#s4-titlerow .dynamic a:hover span {/* ポイント時 */
+  color: #020C7B;
+  text-decoration: underline;
+}
+#s4-titlerow .dynamic a:active span {/* 選択中 */
+  color: #58d5ac;
+}
